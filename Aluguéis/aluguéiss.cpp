@@ -7,12 +7,12 @@
  main()
  {
  
-    int cod,contg;
+    int id,contid;
 	float permeses, valluguel,acumvalal,acumperme,acumcasa,acumap,acumcha,acumoutros,medal;
 	
 	char nomeimb[40], nomearr[40], tip[40];
 	
-	contg=0;
+	contid=0;
 	acumvalal=0;
 	acumperme=0;
 	acumcasa=0;
@@ -24,25 +24,22 @@
 	do
 	{
 		printf("\n +---------------------------------+");
-		
-		printf("\n Digite o numero da imobiliaria :");
-	
-		scanf("%i",&cod);
-		printf("\n Para encerrar, digite 0 :");
+		printf("\n Seja bem vindo! (Para encerrar, digite 0)");	
+		printf("\n Por favor, Digite o numero da imobiliaria a ser cadastrado:");
+		scanf("%i",&id);
 		printf("\n +---------------------------------+");
 		
-		if(cod==0)
+		if(id==0)
 		{
 			printf("\n +---------------------------------+");
 			medal=acumvalal/acumperme;
-			printf("\n A contagem de execução e:%i",contg);
-			printf("\n A contagem de casa e:%.2f",acumcasa);
-			printf("\n A contagem de apartamento e:%.2f",acumap);
-			printf("\n A contagem de chacara e:%.2f",acumcha);
-			printf("\n A contagem de outros e:%.2f",acumoutros);
-			printf("\n O valor acumulado do aluguel e:%.2f",acumvalal);
-			printf("\n O valor acumulado do periodo em meses é:%.2f",acumperme);
-			printf("\n A media acumulada é:%.2f",medal);
+			printf("\n Numero de Imobiliarias cadastradas: %i",contid);
+			printf("\n O numero de casas cadastradas:  %.2f",acumcasa);
+			printf("\n Numero de apartamentos cadastrados: %.2f",acumap);
+			printf("\n Numero de chcara cadastradas: %.2f",acumcha);
+			printf("\n Numero de (Outros) cadastrados: %.2f",acumoutros);
+			printf("\n O valor de aluguel acumulado: %.2f",acumvalal);
+			printf("\n O valor acumulado do periodo em meses: %.2f",acumperme);
 	        printf("\n +---------------------------------+");
 		
 		}
@@ -52,17 +49,17 @@
 			printf("\n +---------------------------------+");
 			printf("\n Entre como o nome da imobiliaria:");
 			scanf("%s",&nomeimb);
-			printf("\n Entre com o tipo do imovel:");
+			printf("\n Entre com o tipo do imovel: (Casa, apartamento ou Chacara)");
 			scanf("%s",&tip);
-			printf("\n Entre com o valor do aluguel:");
+			printf("\n Entre com o valor do aluguel: ");
 			scanf("%f",&valluguel);
-			printf("\n Entre com  o nome do arrendatario:");
+			printf("\n Entre com  o nome do arrendatario: ");
 			scanf("%s",&nomearr);
 			printf("\n Entre com o periodo em meses do contrato: ");
 			scanf("%f",&permeses);
 			printf("\n +---------------------------------+");
 			
-			contg=contg+1;
+			contid=contid+1;
 			if(strcmp("casa",tip)==0)
 			{
 				acumcasa=acumcasa+1;
@@ -87,7 +84,7 @@
 			
 		}
 	    }
-		while(cod!=0);
+		while(id!=0);
 		getch();
 	    }
 	
